@@ -16,18 +16,8 @@
         "operationId": "getCompanyProfile",
         "summary": "Perfil de empresa",
         "parameters": [
-          {
-            "name": "symbol",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "apikey",
-            "in": "query",
-            "required": true,
-            "schema": { "type": "string" }
-          }
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
         ],
         "responses": { "200": { "description": "Perfil de empresa exitosamente obtenido" } }
       }
@@ -37,18 +27,8 @@
         "operationId": "getRatiosTTM",
         "summary": "Ratios financieros TTM",
         "parameters": [
-          {
-            "name": "symbol",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "apikey",
-            "in": "query",
-            "required": true,
-            "schema": { "type": "string" }
-          }
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
         ],
         "responses": { "200": { "description": "Ratios financieros obtenidos" } }
       }
@@ -58,24 +38,9 @@
         "operationId": "getIncomeStatement",
         "summary": "Estado de resultados (últimos reportes)",
         "parameters": [
-          {
-            "name": "symbol",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "schema": { "type": "integer", "default": 4 }
-          },
-          {
-            "name": "apikey",
-            "in": "query",
-            "required": true,
-            "schema": { "type": "string" }
-          }
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "limit", "in": "query", "required": false, "schema": { "type": "integer", "default": 4 } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
         ],
         "responses": { "200": { "description": "Estado de resultados obtenido" } }
       }
@@ -85,18 +50,8 @@
         "operationId": "getCurrentQuote",
         "summary": "Precio actual del activo",
         "parameters": [
-          {
-            "name": "symbol",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "apikey",
-            "in": "query",
-            "required": true,
-            "schema": { "type": "string" }
-          }
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
         ],
         "responses": { "200": { "description": "Cotización obtenida exitosamente" } }
       }
@@ -106,21 +61,36 @@
         "operationId": "getPriceTarget",
         "summary": "Precio objetivo (analistas)",
         "parameters": [
-          {
-            "name": "symbol",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "apikey",
-            "in": "query",
-            "required": true,
-            "schema": { "type": "string" }
-          }
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
         ],
         "responses": { "200": { "description": "Precio objetivo obtenido" } }
+      }
+    },
+    "/cash-flow-statement/{symbol}": {
+      "get": {
+        "operationId": "getCashFlowStatement",
+        "summary": "Estado de flujos de efectivo",
+        "parameters": [
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "limit", "in": "query", "required": false, "schema": { "type": "integer", "default": 4 } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Estado de flujos de efectivo obtenido" } }
+      }
+    },
+    "/balance-sheet-statement/{symbol}": {
+      "get": {
+        "operationId": "getBalanceSheetStatement",
+        "summary": "Balance general (últimos reportes)",
+        "parameters": [
+          { "name": "symbol", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "limit", "in": "query", "required": false, "schema": { "type": "integer", "default": 4 } },
+          { "name": "apikey", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Balance general obtenido" } }
       }
     }
   }
 }
+
